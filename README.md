@@ -47,8 +47,8 @@ RIS/
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
-   cd RIS
+   git clone https://github.com/Niyam23/RIS-Backend.git
+   cd RIS-Backend
    ```
 
 2. **Install dependencies**
