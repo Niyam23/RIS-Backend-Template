@@ -20,8 +20,8 @@ app.use(helmet());
 // CORS configuration
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
-    ? ['https://yourdomain.com'] // Replace with your frontend domain
-    : ['http://localhost:3000', 'http://localhost:3001','http://localhost:6005','http://192.168.1.111:6005'],
+    ? ['http://13.204.5.23:6005'] // Replace with your frontend domain
+    : ['http://localhost:3000', 'http://localhost:3001','http://localhost:6005','http://192.168.1.111:6005','http://13.204.5.23:6005'],
   credentials: true
 }));
 
