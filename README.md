@@ -56,12 +56,18 @@ RIS/
    npm install
    ```
 
-3. **Set up MySQL Database**
+3. **Set up Environment Variables**
+   - Copy `.env.example` to `.env`:
+     ```bash
+     cp .env.example .env
+     ```
+   - Update database credentials in `.env` file
+
+4. **Set up MySQL Database**
    - Install MySQL locally
    - Create database and user (see `MYSQL_SETUP.md` for detailed instructions)
-   - Update database credentials in `config.js` if needed
 
-4. **Start the server**
+5. **Start the server**
    ```bash
    # Development mode
    npm run dev
@@ -143,12 +149,14 @@ curl http://localhost:3000/api/subspecialties/NR/templates
 
 ## Configuration
 
-Update `config.js` to modify:
+Update `.env` file to modify:
 
-- **Port**: Server port (default: 3000)
+- **Port**: Server port (default: 6011)
 - **Database**: MySQL connection settings (host, port, username, password, database name)
 - **RSNA API Base URL**: RSNA API endpoint
 - **Environment**: Development/Production settings
+
+**Note**: The `config.js` file automatically loads environment variables from `.env` using `dotenv`. Sensitive credentials should never be hardcoded in the config file.
 
 ## Error Handling
 
@@ -181,15 +189,20 @@ npm test
 ```
 
 ### Environment Variables
-Create a `.env` file (optional):
+Create a `.env` file from `.env.example`:
+```bash
+cp .env.example .env
 ```
-PORT=3000
+
+Then update the values in `.env` with your actual credentials:
+```
+PORT=6011
 NODE_ENV=development
 DB_HOST=localhost
 DB_PORT=3306
 DB_USERNAME=root
 DB_PASSWORD=your_mysql_password
-DB_NAME=ris_database
+DB_NAME=ris-templates
 RSNA_API_BASE_URL=https://api3.rsna.org/radreport/v1
 ```
 
